@@ -1,0 +1,10 @@
+Makefile
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+src/.deps/
+src/Makefile
+src/http_messages.o
+src/libwebapp
+src/main.o
