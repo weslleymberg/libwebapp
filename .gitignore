@@ -8,3 +8,4 @@ src/Makefile
 src/http_messages.o
 src/libwebapp
 src/main.o
+src/hash.o
