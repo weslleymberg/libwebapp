@@ -1,6 +1,7 @@
 #include <CUnit/Basic.h>
 #include "test_http_messages.h"
 #include "test_hash.h"
+#include "test_iterator.h"
 
 int main()
 {
@@ -31,6 +32,18 @@ int main()
     if ((CU_add_test(hash_pSuite, "it creates an item using set method", test_hash_create_item) == NULL) ||
         (CU_add_test(hash_pSuite, "it sets an item if the key already exists", test_hash_set_item) == NULL) ||
         (CU_add_test(hash_pSuite, "it returns a value matched to a key", test_hash_get_value) == NULL))
+    {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    CU_pSuite iterator_pSuite = NULL;
+    iterator_pSuite = CU_add_suite("Iterator", test_iterator_setup, test_iterator_teardown);
+    if (iterator_pSuite == NULL)
+    {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    if ((CU_add_test(iterator_pSuite, "it returns the next part of a string", test_iterator_next) == NULL))
     {
         CU_cleanup_registry();
         return CU_get_error();
