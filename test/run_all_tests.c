@@ -15,7 +15,8 @@ int main()
     }
     if ((CU_add_test(httprequest_pSuite, "it has a method", test_http_request_method) == NULL) ||
         (CU_add_test(httprequest_pSuite, "it has a path", test_http_request_path) == NULL) ||
-        (CU_add_test(httprequest_pSuite, "it has a http version", test_http_request_httpversion) == NULL))
+        (CU_add_test(httprequest_pSuite, "it has a http version", test_http_request_httpversion) == NULL) ||
+        (CU_add_test(httprequest_pSuite, "it has attributes", test_http_request_attributes) == NULL))
     {
         CU_cleanup_registry();
         return CU_get_error();
