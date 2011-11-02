@@ -43,7 +43,9 @@ int main()
         CU_cleanup_registry();
         return CU_get_error();
     }
-    if ((CU_add_test(iterator_pSuite, "it returns the next part of a string", test_iterator_next) == NULL))
+    if ((CU_add_test(iterator_pSuite, "it returns the next part of a string", test_iterator_next) == NULL) ||
+        (CU_add_test(iterator_pSuite, "it can return the next line of a string", test_iterator_next_line) == NULL) ||
+        (CU_add_test(iterator_pSuite, "it can return the next word of a string", test_iterator_next_word) == NULL))
     {
         CU_cleanup_registry();
         return CU_get_error();

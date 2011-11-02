@@ -16,3 +16,13 @@ char* iterator_next(char* text, int* i, char* separator)
     *i = *i + separator_lenght;
     return part;
 }
+
+char* iterator_next_line(char* text, int* i)
+{
+    return iterator_next(text, i, "\r\n");
+}
+
+char* iterator_next_word(char* text, int* i)
+{
+    return iterator_next(text, i, " ");
+}
