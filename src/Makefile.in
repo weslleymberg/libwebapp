@@ -45,7 +45,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_libwebapp_OBJECTS = main.$(OBJEXT) http_messages.$(OBJEXT) \
-	hash.$(OBJEXT)
+	hash.$(OBJEXT) iterator.$(OBJEXT)
 libwebapp_OBJECTS = $(am_libwebapp_OBJECTS)
 libwebapp_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -144,7 +144,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-libwebapp_SOURCES = main.c http_messages.c hash.c
+libwebapp_SOURCES = main.c http_messages.c hash.c iterator.c
 all: all-am
 
 .SUFFIXES:
@@ -228,6 +228,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/http_messages.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iterator.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 
 .c.o:

@@ -18,5 +18,6 @@ void http_request_set_path(HTTPRequest*, char*);
 void http_request_set_httpversion(HTTPRequest*, char*);
 void http_request_set_attribute(HTTPRequest*, char*, char*);
 char* http_request_get_attribute(HTTPRequest*, char*);
+HTTPRequest* parse_http_request(char*);
 
 #endif

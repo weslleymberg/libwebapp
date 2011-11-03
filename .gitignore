@@ -6,6 +6,7 @@ config.status
 src/.deps/
 src/Makefile
 src/http_messages.o
+src/iterator.o
 src/libwebapp
 src/main.o
 src/hash.o

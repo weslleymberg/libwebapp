@@ -9,6 +9,8 @@ char* iterator_next(char* text, int* i, char* separator)
     int separator_lenght;
     separator_lenght = strlen(separator);
     begin = *i;
+    if (text[*i] == '\0')
+        return NULL;
     while (strncmp(text + *i, separator, separator_lenght) != 0 && text[*i] != '\0')
         (*i)++;
     part = malloc(sizeof(char));
