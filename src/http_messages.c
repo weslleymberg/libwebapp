@@ -65,3 +65,39 @@ HTTPRequest* parse_http_request(char* text)
         }
     return request;
 }
+
+HTTPResponse* new_http_response()
+{
+    HTTPResponse* response;
+    response = malloc(sizeof(HTTPResponse));
+    response->httpversion = malloc(sizeof(char));
+    response->status_code = malloc(sizeof(char));
+    response->message = malloc(sizeof(char));
+    response->attributes = new_hash();
+    return response;
+}
+
+void http_response_set_httpversion(HTTPResponse* response, char* httpversion)
+{
+    strcpy(response->httpversion, httpversion);
+}
+
+void http_response_set_status_code(HTTPResponse* response, char* status_code)
+{
+    strcpy(response->status_code, status_code);
+}
+
+void http_response_set_message(HTTPResponse* response, char* message)
+{
+    strcpy(response->message, message);
+}
+
+void http_response_set_attribute(HTTPResponse* response, char* key, char* value)
+{
+    hash_set(response->attributes, key, value);
+}
+
+char* http_response_get_attribute(HTTPResponse* response, char* key)
+{
+    return hash_get(response->attributes, key);
+}

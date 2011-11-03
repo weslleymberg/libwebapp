@@ -59,3 +59,47 @@ int test_http_request_teardown(void)
 {
     return 0;
 }
+
+int test_http_response_setup(void)
+{
+    return 0;
+}
+
+void test_http_response_httpversion(void)
+{
+    HTTPResponse* response;
+    response = new_http_response();
+    http_response_set_httpversion(response, "HTTP/1.1");
+    CU_ASSERT(strcmp(response->httpversion, "HTTP/1.1") == 0);
+}
+
+void test_http_response_status_code(void)
+{
+    HTTPResponse* response;
+    response = new_http_response();
+    http_response_set_status_code(response, "200");
+    CU_ASSERT(strcmp(response->status_code, "200") == 0);
+}
+
+void test_http_response_message(void)
+{
+    HTTPResponse* response;
+    response = new_http_response();
+    http_response_set_message(response, "OK");
+    CU_ASSERT(strcmp(response->message, "OK") == 0);
+}
+
+void test_http_response_attributes(void)
+{
+    HTTPResponse* response;
+    char* host;
+    response = new_http_response();
+    http_response_set_attribute(response, "Host", "www.example.com");
+    host = http_response_get_attribute(response, "Host");
+    CU_ASSERT(strcmp(host, "www.example.com") == 0);
+}
+
+int test_http_response_teardown(void)
+{
+    return 0;
+}

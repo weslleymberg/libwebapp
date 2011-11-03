@@ -11,4 +11,13 @@ void test_http_request_parse(void);
 
 int test_http_request_teardown(void);
 
+int test_http_response_setup(void);
+
+void test_http_response_httpversion(void);
+void test_http_response_status_code(void);
+void test_http_response_message(void);
+void test_http_response_attributes(void);
+
+int test_http_response_teardown(void);
+
 #endif

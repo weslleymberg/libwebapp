@@ -23,6 +23,20 @@ int main()
         CU_cleanup_registry();
         return CU_get_error();
     }
+    httprequest_pSuite = CU_add_suite("HTTP Response", test_http_response_setup, test_http_response_teardown);
+    if (httprequest_pSuite == NULL)
+    {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    if ((CU_add_test(httprequest_pSuite, "it has a http version", test_http_response_httpversion) == NULL) ||
+        (CU_add_test(httprequest_pSuite, "it has a status code", test_http_response_status_code) == NULL) ||
+        (CU_add_test(httprequest_pSuite, "it has a message", test_http_response_message) == NULL) ||
+        (CU_add_test(httprequest_pSuite, "it has attributes", test_http_response_attributes) == NULL))
+    {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
     CU_pSuite hash_pSuite = NULL;
     hash_pSuite = CU_add_suite("Hash", test_hash_setup, test_hash_teardown);
     if (hash_pSuite == NULL)
