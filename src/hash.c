@@ -43,7 +43,7 @@ void hash_set(Hash* hash, char* key, char* value)
 char* hash_get(Hash* hash, char* key)
 {
     Hash* item;
-    for (item = hash; item != NULL; item = item->next)
+    for (item = hash->next; item != NULL; item = item->next)
         if (strcmp(item->key, key) == 0)
             return item->value;
     return "";

@@ -99,6 +99,19 @@ void test_http_response_attributes(void)
     CU_ASSERT(strcmp(host, "www.example.com") == 0);
 }
 
+void test_http_response_representation(void)
+{
+    HTTPResponse* response;
+    char* response_representation;
+    response = new_http_response();
+    http_response_set_httpversion(response, "HTTP/1.1");
+    http_response_set_status_code(response, "200");
+    http_response_set_message(response, "OK");
+    http_response_set_attribute(response, "Host", "www.example.com");
+    response_representation = http_response_representation(response);
+    CU_ASSERT(strcmp(response_representation, "HTTP/1.1 200 \"OK\"\r\nHost: www.example.com\r\n\r\n") == 0);
+}
+
 int test_http_response_teardown(void)
 {
     return 0;

@@ -17,6 +17,7 @@ void test_http_response_httpversion(void);
 void test_http_response_status_code(void);
 void test_http_response_message(void);
 void test_http_response_attributes(void);
+void test_http_response_representation(void);
 
 int test_http_response_teardown(void);
 

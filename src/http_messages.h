@@ -35,5 +35,6 @@ void http_response_set_status_code(HTTPResponse*, char*);
 void http_response_set_message(HTTPResponse*, char*);
 void http_response_set_attribute(HTTPResponse*, char*, char*);
 char* http_response_get_attribute(HTTPResponse*, char*);
+char* http_response_representation(HTTPResponse*);
 
 #endif

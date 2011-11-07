@@ -32,7 +32,8 @@ int main()
     if ((CU_add_test(httprequest_pSuite, "it has a http version", test_http_response_httpversion) == NULL) ||
         (CU_add_test(httprequest_pSuite, "it has a status code", test_http_response_status_code) == NULL) ||
         (CU_add_test(httprequest_pSuite, "it has a message", test_http_response_message) == NULL) ||
-        (CU_add_test(httprequest_pSuite, "it has attributes", test_http_response_attributes) == NULL))
+        (CU_add_test(httprequest_pSuite, "it has attributes", test_http_response_attributes) == NULL) ||
+        (CU_add_test(httprequest_pSuite, "it can generate a string", test_http_response_representation) == NULL))
     {
         CU_cleanup_registry();
         return CU_get_error();

@@ -101,3 +101,25 @@ char* http_response_get_attribute(HTTPResponse* response, char* key)
 {
     return hash_get(response->attributes, key);
 }
+
+char* http_response_representation(HTTPResponse* response)
+{
+    char* representation;
+    Hash* attribute;
+    representation = malloc(sizeof(char));
+    strcat(representation, response->httpversion);
+    strcat(representation, " ");
+    strcat(representation, response->status_code);
+    strcat(representation, " \"");
+    strcat(representation, response->message);
+    strcat(representation, "\"\r\n");
+    for (attribute = response->attributes->next; attribute != NULL; attribute = attribute->next)
+    {
+        strcat(representation, attribute->key);
+        strcat(representation, ": ");
+        strcat(representation, attribute->value);
+        strcat(representation, "\r\n");
+    }
+    strcat(representation, "\r\n");
+    return representation;
+}
