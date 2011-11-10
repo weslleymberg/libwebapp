@@ -6,3 +6,5 @@ src/cmake_install.cmake
 src/liblibwebapp.a
 Makefile
 src/Makefile
+install_manifest.txt
+src/libwebapp.a
