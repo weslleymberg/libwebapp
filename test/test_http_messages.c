@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <string.h>
 #include "test_http_messages.h"
-#include "../src/http_messages.h"
+#include "libwebapp/http_messages.h"
 
 int test_http_request_setup(void)
 {

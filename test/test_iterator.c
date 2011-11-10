@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <string.h>
 #include "test_iterator.h"
-#include "../src/iterator.h"
+#include "libwebapp/iterator.h"
 
 int test_iterator_setup(void)
 {

@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <string.h>
 #include "test_hash.h"
-#include "../src/hash.h"
+#include "libwebapp/hash.h"
 
 int test_hash_setup(void)
 {
