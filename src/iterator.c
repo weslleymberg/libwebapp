@@ -13,7 +13,7 @@ char* iterator_next(char* text, int* i, char* separator)
         return NULL;
     while (strncmp(text + *i, separator, separator_lenght) != 0 && text[*i] != '\0')
         (*i)++;
-    part = malloc(sizeof(char));
+    part = malloc(*i - begin);
     strncpy(part, text + begin, *i - begin);
     *i = *i + separator_lenght;
     return part;
