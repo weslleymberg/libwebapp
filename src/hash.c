@@ -28,8 +28,8 @@ void hash_set(Hash* hash, char* key, char* value)
             Hash* last;
             last = item;
             item = malloc(sizeof(Hash));
-            item->key = malloc(sizeof(char));
-            item->value = malloc(sizeof(char));
+            item->key = malloc(strlen(key));
+            item->value = malloc(strlen(value));
             strcpy(item->key, key);
             strcpy(item->value, value);
             last->next = item;
